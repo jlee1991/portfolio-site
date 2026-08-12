@@ -238,6 +238,61 @@
 
   @media (max-width:900px){ .pillars{grid-template-columns:1fr;} }
 
+  /* ---------- Timeline ---------- */
+  .timeline{position:relative; margin-top:8px;}
+  .timeline::before{
+    content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:var(--border-strong);
+  }
+  .timeline-item{position:relative; padding-left:34px; padding-bottom:34px;}
+  .timeline-item:last-child{padding-bottom:0;}
+  .timeline-item::before{
+    content:""; position:absolute; left:0; top:4px; width:16px; height:16px;
+    border-radius:50%; background:var(--bg); border:2px solid var(--cyan);
+  }
+  .timeline-item .role{font-weight:700; color:var(--text); font-size:1.02rem;}
+  .timeline-item .company{color:var(--cyan-dim); font-weight:600; font-size:0.9rem;}
+  .timeline-item .dates{
+    color:var(--text-faint); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.07em; margin:3px 0 10px;
+  }
+  .timeline-item p{color:var(--text-dim); font-size:0.9rem; line-height:1.55;}
+
+  /* ---------- Education & Skills ---------- */
+  .edu-skills-grid{display:grid; grid-template-columns:1fr 1.3fr; gap:48px;}
+  .edu-item{margin-bottom:20px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-item .degree{font-weight:700; color:var(--text); font-size:0.98rem;}
+  .edu-item .school{color:var(--cyan-dim); font-weight:600; font-size:0.9rem; margin-top:2px;}
+  .edu-item .dates{color:var(--text-faint); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.07em; margin-top:2px;}
+  .skill-groups{display:flex; flex-direction:column; gap:18px;}
+  .skill-group h4{
+    font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--text-faint); margin-bottom:10px;
+  }
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-tag{
+    background:rgba(132,232,255,0.06); border:1px solid rgba(132,232,255,0.18);
+    color:var(--text); font-size:0.82rem; font-weight:600; padding:6px 13px; border-radius:100px;
+  }
+  @media (max-width:900px){ .edu-skills-grid{grid-template-columns:1fr; gap:36px;} }
+
+  /* ---------- Testimonials ---------- */
+  .testimonial-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .testimonial-card{
+    background:var(--card); border:1px solid var(--border); border-radius:20px; padding:32px;
+    display:flex; flex-direction:column;
+  }
+  .testimonial-card .qmark{color:var(--cyan); font-weight:700; font-style:normal;}
+  .testimonial-card p{color:var(--text-dim); font-style:italic; font-size:0.95rem; line-height:1.6; margin-bottom:20px; flex:1;}
+  .testimonial-author{display:flex; align-items:center; gap:12px; padding-top:18px; border-top:1px solid var(--border);}
+  .testimonial-avatar{
+    width:42px; height:42px; border-radius:50%; flex:none;
+    background:rgba(132,232,255,0.1); border:1px solid rgba(132,232,255,0.25);
+    display:flex; align-items:center; justify-content:center; color:var(--cyan); font-weight:800; font-size:0.9rem;
+  }
+  .testimonial-author strong{display:block; color:var(--text); font-size:0.92rem;}
+  .testimonial-author span{display:block; color:var(--text-faint); font-size:0.78rem; margin-top:2px;}
+  @media (max-width:800px){ .testimonial-grid{grid-template-columns:1fr;} }
+
   /* ---------- Case studies ---------- */
   #cases{background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
   .case{
@@ -465,6 +520,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#companies">Companies</a></li>
     </ul>
     <a href="#contact" class="cta-btn">Get in Touch</a>
@@ -474,6 +530,7 @@
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#cases">Case Studies</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#companies">Companies</a>
     <a href="#contact">Contact</a>
   </div>
@@ -558,6 +615,119 @@
         <div class="quote-block">
           <p><span class="qmark">&ldquo;</span>I've seen healthcare across multiple points of care, from community health centers serving the homeless to Medicare patients navigating the hospital system. It's no accident I've spent over a decade building solutions in this space.</p>
           <p>The real value of healthcare AI isn't in the model — it's in improving patient outcomes by turning fragmented data into timely, actionable decisions across the care journey.<span class="qmark">&rdquo;</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="sub-head">Career Path</p>
+      <h2>From healthcare data analyst to enterprise AI platform leader</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="role">AI Portfolio Lead, Foundational Technology Platforms</div>
+        <div class="company">Takeda</div>
+        <div class="dates">Jun 2025 – Jul 2026</div>
+        <p>Led AI portfolio across four platform pillars (networking, infrastructure, data, support) spanning 20+ enterprise applications, unifying demand management and establishing governance that resulted in zero major production incidents.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="role">AI Transformation Product Owner, Databricks</div>
+        <div class="company">Takeda</div>
+        <div class="dates">May 2022 – Jun 2025</div>
+        <p>Directed enterprise data and AI platform strategy across 8 business units and 2,700+ users, leading a 20-person cross-functional team and growing platform investment from $17.5M to $30M+.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="role">Data Scientist</div>
+        <div class="company">Humana</div>
+        <div class="dates">Dec 2019 – May 2022</div>
+        <p>Built predictive models and Power BI dashboards to improve member experience and reduce CMS complaints, using claims and survey data across ~75K members to identify cost-saving intervention points.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="role">Product Manager, Integrations</div>
+        <div class="company">par8o</div>
+        <div class="dates">Jan 2018 – Oct 2018</div>
+        <p>Led product development for healthcare EMR integrations (Epic, Cerner, athenahealth) via APIs and HL7, onboarding major health systems and prioritizing features across development and QA teams.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="role">Implementation Specialist</div>
+        <div class="company">Azara Healthcare</div>
+        <div class="dates">Oct 2016 – Jan 2018</div>
+        <p>Implemented a population health analytics platform, integrating EHR data (Epic, NextGen, eCW) and partnering with clinical and administrative stakeholders to drive adoption and reporting.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="role">Data Analyst</div>
+        <div class="company">Beth Israel Deaconess Medical Center</div>
+        <div class="dates">Sep 2014 – Oct 2016</div>
+        <p>Designed a referral tracking system and reporting tools, delivering analytics to executive leadership (CEO, COO, CMO) that improved patient retention and reduced out-of-network leakage.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="role">Senior Analyst, Consulting</div>
+        <div class="company">Accenture</div>
+        <div class="dates">Aug 2012 – Jul 2014</div>
+        <p>Automated deployment and release processes for large-scale government and financial-sector systems, improving operational efficiency and scalability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="sub-head">Background</p>
+      <h2>Education &amp; Skills</h2>
+    </div>
+    <div class="edu-skills-grid">
+      <div>
+        <h3 class="sub-head">Education</h3>
+        <div class="edu-item">
+          <div class="degree">B.S., Electrical Engineering</div>
+          <div class="school">Boston University</div>
+        </div>
+        <div class="edu-item">
+          <div class="degree">Data Science Coursework</div>
+          <div class="school">Harvard Extension School</div>
+          <div class="dates">Jan 2019 – Sep 2019</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-head">Skills &amp; Tools</h3>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h4>Platform &amp; Data Engineering</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Databricks</span>
+              <span class="skill-tag">Unity Catalog</span>
+              <span class="skill-tag">Delta Sharing</span>
+              <span class="skill-tag">Serverless SQL</span>
+              <span class="skill-tag">AWS S3</span>
+              <span class="skill-tag">Informatica BDM</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Data Science &amp; Analytics</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PySpark</span>
+              <span class="skill-tag">scikit-learn</span>
+              <span class="skill-tag">DataRobot</span>
+              <span class="skill-tag">Power BI</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Leadership &amp; Strategy</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">AI Product Strategy</span>
+              <span class="skill-tag">Platform Governance</span>
+              <span class="skill-tag">Cross-Functional Leadership</span>
+              <span class="skill-tag">Stakeholder Management</span>
+              <span class="skill-tag">Cost Optimization</span>
+              <span class="skill-tag">EMR Integrations (HL7)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -933,6 +1103,37 @@
   </div>
 </section>
 
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="sub-head">What Colleagues Say</p>
+      <h2>Direct feedback from managers Jim has worked with</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p><span class="qmark">&ldquo;</span>Jim played an important role in bringing structure and alignment to a broad and evolving portfolio. He partnered effectively with platform and business stakeholders to prioritize initiatives, manage demand, and keep teams focused on high-impact outcomes. What stands out about Jim is his collaborative style and positive attitude — he approaches challenges with a calm, solutions-oriented mindset and consistently contributes as a strong team player.<span class="qmark">&rdquo;</span></p>
+        <div class="testimonial-author">
+          <span class="testimonial-avatar" aria-hidden="true">SD</span>
+          <div>
+            <strong><a href="https://www.linkedin.com/in/jayanthz/" target="_blank" rel="noopener noreferrer">Shyam J Dadala (Jai)</a></strong>
+            <span>Data, Digital &amp; Technology Leader — Jim's manager at Takeda</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p><span class="qmark">&ldquo;</span>Jim is one of those rare leaders who combines deep technical credibility with the cross-functional instincts needed to actually move the needle at enterprise scale. He didn't just manage infrastructure — he helped shape the platform's operating model and roadmap. He is exactly the kind of manager you want leading a data platform function. I recommend him without reservation.<span class="qmark">&rdquo;</span></p>
+        <div class="testimonial-author">
+          <span class="testimonial-avatar" aria-hidden="true">BX</span>
+          <div>
+            <strong><a href="https://www.linkedin.com/in/blake-xiao-958948/" target="_blank" rel="noopener noreferrer">Blake Xiao</a></strong>
+            <span>Data &amp; AI Architect, Eli Lilly — Jim's manager at Takeda</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="companies">
   <div class="wrap">
     <div class="section-head">
@@ -954,7 +1155,7 @@
   <div class="wrap">
     <span class="eyebrow">Let's Connect</span>
     <h2>Driving Enterprise AI from <span class="arrow">Platform → Adoption → Real-World Impact</span></h2>
-    <p class="lead">Open to AI strategy, platform, and transformation leadership opportunities.</p>
+    <p class="lead">Seeking senior leadership roles in AI strategy and enterprise data platforms — ideally within healthcare or life sciences.</p>
     <div class="contact-row">
       <a class="btn btn-solid" href="assets/Jim-Lee-Resume.pdf" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
