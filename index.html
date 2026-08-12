@@ -288,7 +288,9 @@
     width:42px; height:42px; border-radius:50%; flex:none;
     background:rgba(132,232,255,0.1); border:1px solid rgba(132,232,255,0.25);
     display:flex; align-items:center; justify-content:center; color:var(--cyan); font-weight:800; font-size:0.9rem;
+    overflow:hidden;
   }
+  .testimonial-avatar img{width:100%; height:100%; object-fit:cover; display:block;}
   .testimonial-author strong{display:block; color:var(--text); font-size:0.92rem;}
   .testimonial-author span{display:block; color:var(--text-faint); font-size:0.78rem; margin-top:2px;}
   @media (max-width:800px){ .testimonial-grid{grid-template-columns:1fr;} }
@@ -1113,7 +1115,7 @@
       <div class="testimonial-card">
         <p><span class="qmark">&ldquo;</span>Jim played an important role in bringing structure and alignment to a broad and evolving portfolio. He partnered effectively with platform and business stakeholders to prioritize initiatives, manage demand, and keep teams focused on high-impact outcomes. What stands out about Jim is his collaborative style and positive attitude — he approaches challenges with a calm, solutions-oriented mindset and consistently contributes as a strong team player.<span class="qmark">&rdquo;</span></p>
         <div class="testimonial-author">
-          <span class="testimonial-avatar" aria-hidden="true">SD</span>
+          <span class="testimonial-avatar"><img src="assets/testimonials/shyam.jpg" alt="Shyam J Dadala"></span>
           <div>
             <strong><a href="https://www.linkedin.com/in/jayanthz/" target="_blank" rel="noopener noreferrer">Shyam J Dadala (Jai)</a></strong>
             <span>Data, Digital &amp; Technology Leader — Takeda</span>
