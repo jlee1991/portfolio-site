@@ -155,6 +155,7 @@
     background:radial-gradient(circle, rgba(132,232,255,0.32), rgba(132,232,255,0.08) 55%, transparent 72%);
     filter:blur(6px);
   }
+  .photo-frame-wrap{position:relative;}
   .hero-photo .frame{
     position:relative; border-radius:22px; overflow:hidden;
     padding:3px;
@@ -173,10 +174,14 @@
   }
   .hero-photo .badge .num{color:var(--cyan); font-weight:800; font-size:1.3rem; display:block;}
   .hero-photo .badge .lbl{color:var(--text-faint); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em;}
+  .hero-photo-caption{
+    margin-top:56px; text-align:center; color:var(--text-dim); font-size:0.92rem; line-height:1.5;
+  }
 
   @media (max-width:900px){
     .hero .wrap{grid-template-columns:1fr; text-align:left;}
     .hero-photo{max-width:220px; justify-self:start; margin-bottom:12px;}
+    .hero-photo-caption{text-align:left; margin-top:48px;}
   }
 
   /* ---------- Section basics ---------- */
@@ -582,8 +587,11 @@
       </div>
     </div>
     <div class="hero-photo">
-      <div class="frame"><img src="assets/headshot.jpg" alt="Jim Lee headshot"></div>
-      <div class="badge"><span class="num">$30M+</span><span class="lbl">AI Platform Scaled</span></div>
+      <div class="photo-frame-wrap">
+        <div class="frame"><img src="assets/headshot.jpg" alt="Jim Lee headshot"></div>
+        <div class="badge"><span class="num">$30M+</span><span class="lbl">AI Platform Scaled</span></div>
+      </div>
+      <p class="hero-photo-caption">Open to senior AI strategy leadership roles — healthcare or life sciences.</p>
     </div>
   </div>
 </section>
@@ -1174,30 +1182,16 @@
   <div class="wrap">
     <span class="eyebrow">Let's Connect</span>
     <h2>Driving Enterprise AI from <span class="arrow">Platform → Adoption → Real-World Impact</span></h2>
-    <p class="lead">Seeking senior leadership roles in AI strategy and enterprise data platforms — ideally within healthcare or life sciences.</p>
+    <p class="lead">Thanks for taking the time to look through my work — I'd welcome the chance to talk about how I can help your team's next chapter.</p>
     <div class="contact-row">
-      <a class="btn btn-solid" href="assets/Jim-Lee-Resume.pdf" download>
+      <a class="btn btn-solid" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jim.lee.nj@gmail.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+        Email Jim
+      </a>
+      <a class="btn btn-outline" href="assets/Jim-Lee-Resume.pdf" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
         Download Resume
       </a>
-      <div class="contact-card">
-        <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jim.lee.nj@gmail.com" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
-          jim.lee.nj@gmail.com
-        </a>
-        <a class="contact-link phone-copy" href="tel:+19084616749" data-phone="(908) 461-6749">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 006 6l1.5-2 4 1.5v3a2 2 0 01-2.2 2A17 17 0 014.5 5.7a2 2 0 012-2.2z"/></svg>
-          (908) 461-6749
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/jlee1991/" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.3" y="1.3" width="21.4" height="21.4" rx="4"/><path fill="currentColor" stroke="none" d="M7.5 9.5h2.2v7.3H7.5zM8.6 8.4a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6zM11.6 9.5h2.1v1h.03c.3-.55 1-1.13 2.1-1.13 2.25 0 2.67 1.4 2.67 3.24v4.19h-2.2V13c0-.9-.02-2.05-1.25-2.05-1.26 0-1.45.96-1.45 1.96v3.9h-2.2z"/></svg>
-          LinkedIn
-        </a>
-        <a class="contact-link" href="https://github.com/jlee1991" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -1274,75 +1268,138 @@
   // ---------- Portfolio assistant ----------
   const KB = [
     {
+      id: 'general-intro',
+      chip: 'Tell me about Jim',
+      keywords: ['yourself','about you','about jim','who are you','who is jim','what do you do','tell me about','summary','overview','elevator pitch','introduce','introduction','strengths','why hire','why should we hire'],
+      answers: [
+        "Jim is a senior AI strategy leader focused on the healthcare ecosystem — pharma, payer, and provider. He's spent over a decade turning enterprise data platforms into real adoption and measurable impact, most recently growing Databricks investment at Takeda from $1M to $30M+ while leading global AI platform adoption across 8 business units. His path runs through consulting and product management into hands-on data science at Humana, then platform strategy at Takeda — so he can speak fluently to both the technical build and the business case for it.",
+        "In short: Jim builds and scales AI/data platforms that healthcare organizations actually use. He came up through consulting and product management, retrained into data science at Humana, and then took on platform strategy at Takeda — growing that investment from $1M to $30M+ and leading adoption across 8 business units. What drives him is turning fragmented healthcare data into decisions that actually improve patient outcomes, not just building models for their own sake."
+      ]
+    },
+    {
       id: 'takeda-migration',
       chip: 'Takeda platform migration',
       keywords: ['takeda','pvc','e2','migration','migrate','legacy','technical debt','saas','databricks','deloitte','platform transformation'],
-      answer: "At Takeda, Jim inherited a legacy self-managed Databricks environment (PVC) carrying heavy technical debt — Takeda was among the last clients still on that version, adding pressure to move. He led a team (including a Deloitte partner team) through the migration to a modern SaaS platform (E2), correcting root causes of the debt (tagging, security, resource management) while introducing new capabilities like SQL Warehouse. Over roughly two years, they migrated 2,000+ active users and their workflows without disrupting live support."
+      answers: [
+        "At Takeda, Jim inherited a legacy self-managed Databricks environment (PVC) carrying heavy technical debt — Takeda was among the last clients still on that version, adding pressure to move. He led a team (including a Deloitte partner team) through the migration to a modern SaaS platform (E2), correcting root causes of the debt (tagging, security, resource management) while introducing new capabilities like SQL Warehouse. Over roughly two years, they migrated 2,000+ active users and their workflows without disrupting live support.",
+        "One of Jim's biggest platform initiatives at Takeda was leading the migration off a legacy, self-managed Databricks environment (PVC) — Takeda was one of the last clients still running it — onto the modern SaaS platform (E2). Working with a team that included a Deloitte partner group, he fixed the underlying causes of the technical debt (tagging, security, resource management) and rolled out new capabilities like SQL Warehouse along the way. The whole thing took about two years and moved 2,000+ active users without interrupting live support."
+      ]
     },
     {
       id: 'bdm-migration',
       chip: 'Informatica BDM cost save',
       keywords: ['bdm','informatica','vendor','workflow','coding','budget','1.2m'],
-      answer: "Informatica BDM powers many of Takeda's core workflows. A vendor-proposed migration plan blew well past budget and timeline and risked live operations. Jim worked directly with the vendor and Informatica's product owner to pilot a simpler approach — cutting the timeline by months, reducing coding effort by about 40%, and saving $1.2M."
+      answers: [
+        "Informatica BDM powers many of Takeda's core workflows. A vendor-proposed migration plan blew well past budget and timeline and risked live operations. Jim worked directly with the vendor and Informatica's product owner to pilot a simpler approach — cutting the timeline by months, reducing coding effort by about 40%, and saving $1.2M.",
+        "When a vendor's proposed plan to migrate Informatica BDM (which runs many of Takeda's core workflows) came in over budget, over timeline, and risky for live operations, Jim pushed back. He partnered directly with the vendor and Informatica's product owner to pilot a leaner approach instead — it cut the timeline by months, reduced coding effort roughly 40%, and saved $1.2M."
+      ]
     },
     {
       id: 'storage-cleanup',
       chip: 'Biggest cost savings',
       keywords: ['storage','vacuum','s3','petabyte','cost','save','saving','savings','saved','money','cloud','finance','expensive','reduce','budget'],
-      answer: "Finance flagged runaway S3 storage costs at Takeda. Jim traced the root cause to a missing garbage-collection cycle that let years of unmaintained log files pile up into roughly 3 petabytes of excess storage. He coordinated with stakeholders to safely notify and clean it up, delivering over $4M in savings and recognition for the team."
+      answers: [
+        "Finance flagged runaway S3 storage costs at Takeda. Jim traced the root cause to a missing garbage-collection cycle that let years of unmaintained log files pile up into roughly 3 petabytes of excess storage. He coordinated with stakeholders to safely notify and clean it up, delivering over $4M in savings and recognition for the team.",
+        "Jim's biggest cost-savings win came from a Finance escalation about runaway S3 storage costs at Takeda. He dug in and found the root cause: a missing garbage-collection cycle that had let years of log files quietly pile up to roughly 3 petabytes. After coordinating carefully with stakeholders to notify and safely clean it up, the result was over $4M in savings — and recognition for the team that found it."
+      ]
     },
     {
       id: 'current-project',
       chip: 'What is Jim doing now?',
       keywords: ['current','now','today','working on','doing now','serverless','unity catalog','delta sharing','delta live tables','assistant','pilot','new feature','next','seeking','opportunities','looking for'],
-      answer: "Jim successfully piloted and then scaled Unity Catalog across the enterprise, alongside Databricks' newer SaaS capabilities (Serverless SQL, Delta Live Tables, Delta Sharing). Having delivered on that roadmap, he's now seeking new opportunities in AI — excited to see how these capabilities can keep growing to address real problems in healthcare."
+      answers: [
+        "Jim successfully piloted and then scaled Unity Catalog across the enterprise, alongside Databricks' newer SaaS capabilities (Serverless SQL, Delta Live Tables, Delta Sharing). Having delivered on that roadmap, he's now seeking new opportunities in AI — excited to see how these capabilities can keep growing to address real problems in healthcare.",
+        "Most recently, Jim piloted and then scaled Unity Catalog enterprise-wide at Takeda, alongside newer Databricks SaaS capabilities like Serverless SQL, Delta Live Tables, and Delta Sharing. With that roadmap delivered, he's now looking for his next senior AI leadership role — ideally somewhere he can keep applying these capabilities to real healthcare problems."
+      ]
     },
     {
       id: 'transition-ds',
       chip: 'How did Jim get into data science?',
       keywords: ['transition','career change','datarobot','background','started','how did','why data science','journey','path'],
-      answer: "Jim transitioned into data science after taking time off to take evening classes, including one taught by a former DataRobot VP that hooked him on the field. He built a portfolio of hands-on projects that led directly to interviews and his role at Humana — his first time sitting in a hands-on technical seat after a career in consulting and product management. He later moved on to lead AI platform strategy at Takeda."
+      answers: [
+        "Jim transitioned into data science after taking time off to take evening classes, including one taught by a former DataRobot VP that hooked him on the field. He built a portfolio of hands-on projects that led directly to interviews and his role at Humana — his first time sitting in a hands-on technical seat after a career in consulting and product management. He later moved on to lead AI platform strategy at Takeda.",
+        "It wasn't a straight line — Jim started in consulting and product management, then took time off to study data science in evening classes, including one taught by a former DataRobot VP that got him hooked. He turned that into a portfolio of hands-on projects, which led to interviews and his first technical seat at Humana. From there he moved into leading AI platform strategy at Takeda."
+      ]
     },
     {
       id: 'conflict',
       chip: 'A time Jim handled conflict',
       keywords: ['conflict','disagreement','difficult','tension','deadline','challenge','struggle','hard time','weakness','failure','mistake'],
-      answer: "When a modeling project fell behind at Humana, Jim was pulled in to deliver within a month. He and the lead data scientist came from very different backgrounds (academia vs. industry) and initially struggled to align on data gathering. Jim built out a parallel feature set and rallied the team to create a backup modeling approach — the project shipped on time, and the team ended up with two viable models to offer stakeholders a choice."
+      answers: [
+        "When a modeling project fell behind at Humana, Jim was pulled in to deliver within a month. He and the lead data scientist came from very different backgrounds (academia vs. industry) and initially struggled to align on data gathering. Jim built out a parallel feature set and rallied the team to create a backup modeling approach — the project shipped on time, and the team ended up with two viable models to offer stakeholders a choice.",
+        "A good example: a modeling project at Humana had fallen behind, and Jim was brought in with about a month to deliver. He and the lead data scientist didn't initially see eye to eye on data gathering — different backgrounds, academia versus industry. Rather than let it stall the project, Jim built a parallel feature set and rallied the team around a backup modeling approach. It shipped on time, and stakeholders ended up with two viable models to choose from instead of none."
+      ]
     },
     {
       id: 'ccom-journey',
       chip: 'Customer journey dashboard',
       keywords: ['customer journey','power bi','dashboard','visualization','stakeholder','jira','ccom','product ownership','requirements','prescription journey'],
-      answer: "Jim led the visualization workstream on a three-team effort (Modeling, Engineering, Visualization) to quantify a member's prescription-fill journey across channels. As requirements started getting lost in stakeholder feedback, he introduced JIRA-based documentation and learned Power BI to build dashboards that made functionality tangible. He prioritized the backlog with Engineering and Modeling and delivered two iterations over four months, including a presentation to Humana's SVP of DH&A."
+      answers: [
+        "Jim led the visualization workstream on a three-team effort (Modeling, Engineering, Visualization) to quantify a member's prescription-fill journey across channels. As requirements started getting lost in stakeholder feedback, he introduced JIRA-based documentation and learned Power BI to build dashboards that made functionality tangible. He prioritized the backlog with Engineering and Modeling and delivered two iterations over four months, including a presentation to Humana's SVP of DH&A.",
+        "On the customer-journey initiative at Humana, Jim owned the visualization workstream of a three-team effort (Modeling, Engineering, Visualization) mapping how members filled prescriptions across channels. Requirements kept getting lost in stakeholder feedback, so he introduced JIRA-based documentation and taught himself Power BI to make functionality tangible for stakeholders. Working the backlog jointly with Engineering and Modeling, he shipped two iterations over four months — including a readout to Humana's SVP of DH&A."
+      ]
     },
     {
       id: 'cms-model',
       chip: 'Medicare complaints model',
       keywords: ['cms','complaint','medicare','semma','machine learning','predictive model','auc','feature engineering','classification'],
-      answer: "Jim built a predictive model to flag members likely to file a CMS complaint, following the SEMMA process (Sample, Explore, Modify, Model, Assess). He aggregated hundreds of features, used an 80/20 train/test split with over/undersampling to handle class imbalance, and evaluated candidate models on AUC. The findings were adopted into outreach and call-routing strategy."
+      answers: [
+        "Jim built a predictive model to flag members likely to file a CMS complaint, following the SEMMA process (Sample, Explore, Modify, Model, Assess). He aggregated hundreds of features, used an 80/20 train/test split with over/undersampling to handle class imbalance, and evaluated candidate models on AUC. The findings were adopted into outreach and call-routing strategy.",
+        "On the modeling side, Jim built a classifier to predict which members were likely to file a CMS complaint, working through the SEMMA process end to end (Sample, Explore, Modify, Model, Assess). That meant aggregating hundreds of features, an 80/20 train/test split with over/undersampling to handle class imbalance, and comparing candidate models on AUC. The results ended up shaping real outreach and call-routing strategy, not just a report."
+      ]
     },
     {
       id: 'enroll-onboard',
       chip: 'Insulin Savings & Welcome Calls',
       keywords: ['insulin','welcome call','onboarding','enrollment','enroll','retention','propensity matching','adoption','outreach campaign'],
-      answer: "Jim supported new-member enrollment analytics at Humana, including two outreach campaigns: the Insulin Savings Program (claims-based alternative-prescription suggestions) and Welcome Calls (propensity-matched retention outreach). Despite churn in data science leadership on the team, he delivered on time — the Insulin Savings Program hit 90%+ adoption and Welcome Calls drove 3x better retention."
+      answers: [
+        "Jim supported new-member enrollment analytics at Humana, including two outreach campaigns: the Insulin Savings Program (claims-based alternative-prescription suggestions) and Welcome Calls (propensity-matched retention outreach). Despite churn in data science leadership on the team, he delivered on time — the Insulin Savings Program hit 90%+ adoption and Welcome Calls drove 3x better retention.",
+        "Jim also supported new-member enrollment analytics at Humana, driving two outreach campaigns to launch: the Insulin Savings Program, which used claims data to suggest lower-cost prescription alternatives, and Welcome Calls, which used propensity matching to target retention outreach. He kept both on schedule despite leadership churn on the data science team — Insulin Savings landed 90%+ adoption, and Welcome Calls drove 3x better retention."
+      ]
     },
     {
       id: 'internship',
       chip: 'Mentoring & leadership',
       keywords: ['intern','mentor','mentoring','managed people','leadership style','team lead','wiki','documentation','grad student'],
-      answer: "Jim remotely managed two graduate-student interns through the pandemic, running biweekly 1:1s and working alongside them directly. He spearheaded documentation of the Retail team's projects into an internal wiki covering onboarding and offboarding. Both interns were recognized for their contributions and took ownership of critical deliverables."
+      answers: [
+        "Jim remotely managed two graduate-student interns through the pandemic, running biweekly 1:1s and working alongside them directly. He spearheaded documentation of the Retail team's projects into an internal wiki covering onboarding and offboarding. Both interns were recognized for their contributions and took ownership of critical deliverables.",
+        "On the people-management side, Jim remotely managed two graduate-student interns through the pandemic — biweekly 1:1s, working alongside them directly rather than just delegating. He also led the effort to document the Retail team's projects into an internal onboarding/offboarding wiki. Both interns went on to own critical deliverables and were recognized for their contributions."
+      ]
     },
     {
       id: 'contact',
       chip: 'How do I contact Jim?',
       keywords: ['contact','email','reach','linkedin','phone','hire','call','touch','resume','connect'],
-      answer: "You can reach Jim directly at jim.lee.nj@gmail.com, connect on LinkedIn (linkedin.com/in/jlee1991), find him on GitHub (github.com/jlee1991), or call (908) 461-6749. There's also a Download Resume button in the hero and contact sections of this page."
+      answers: [
+        "You can reach Jim directly at jim.lee.nj@gmail.com, connect on LinkedIn (linkedin.com/in/jlee1991), find him on GitHub (github.com/jlee1991), or call (908) 461-6749. There's also a Download Resume button in the hero and contact sections of this page.",
+        "Easiest ways to reach Jim: email at jim.lee.nj@gmail.com, LinkedIn at linkedin.com/in/jlee1991, or a call at (908) 461-6749. His GitHub is github.com/jlee1991, and you can grab his resume directly from the Download Resume button on this page."
+      ]
     },
   ];
 
-  const FALLBACK = "I don't have a canned answer for that yet — try one of the suggested questions below, or reach out to Jim directly at jim.lee.nj@gmail.com to ask him yourself.";
+  const FALLBACKS = [
+    "I don't have a specific answer for that one — try one of the suggested questions below, or reach out to Jim directly at jim.lee.nj@gmail.com and he'll answer it himself.",
+    "That's outside what I've been briefed on. I'm built from Jim's own project notes, so I'm best at questions about his work — try a topic below, or email him at jim.lee.nj@gmail.com for anything else.",
+    "Good question, but not one I can answer from Jim's notes. Tap a suggestion below for what I do know, or reach him directly at jim.lee.nj@gmail.com."
+  ];
   const GREETING = "Hi! I'm a portfolio assistant built from Jim's own project notes. Ask about a specific project, or tap a suggestion below.";
+
+  let fallbackIdx = 0;
+  function nextFallback() {
+    const msg = FALLBACKS[fallbackIdx % FALLBACKS.length];
+    fallbackIdx++;
+    return msg;
+  }
+
+  const lastAnswerIdx = {};
+  function pickAnswer(entry) {
+    const variants = entry.answers;
+    if (variants.length === 1) return variants[0];
+    let idx = Math.floor(Math.random() * variants.length);
+    if (idx === lastAnswerIdx[entry.id]) idx = (idx + 1) % variants.length;
+    lastAnswerIdx[entry.id] = idx;
+    return variants[idx];
+  }
 
   function scoreEntry(entry, text) {
     const words = text.split(/\W+/).filter(Boolean);
@@ -1367,7 +1424,7 @@
       const s = scoreEntry(entry, text);
       if (s > bestScore) { bestScore = s; best = entry; }
     }
-    return best ? best.answer : FALLBACK;
+    return best ? pickAnswer(best) : nextFallback();
   }
 
   const chatToggle = document.getElementById('chatToggle');
@@ -1395,7 +1452,7 @@
       btn.textContent = entry.chip;
       btn.addEventListener('click', () => {
         addMessage(entry.chip, 'user');
-        addMessage(entry.answer, 'bot');
+        setTimeout(() => addMessage(pickAnswer(entry), 'bot'), 250);
       });
       chatChips.appendChild(btn);
     });
