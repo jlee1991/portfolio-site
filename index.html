@@ -1270,7 +1270,7 @@
     {
       id: 'general-intro',
       chip: 'Tell me about Jim',
-      keywords: ['yourself','about you','about jim','who are you','who is jim','what do you do','tell me about','summary','overview','elevator pitch','introduce','introduction','strengths','why hire','why should we hire'],
+      keywords: ['yourself','about you','about jim','who are you','who is jim','what do you do','tell me about jim','tell me about yourself','summary','overview','elevator pitch','introduce','introduction','strengths','why hire','why should we hire'],
       answers: [
         "Jim is a senior AI strategy leader focused on the healthcare ecosystem — pharma, payer, and provider. He's spent over a decade turning enterprise data platforms into real adoption and measurable impact, most recently growing Databricks investment at Takeda from $1M to $30M+ while leading global AI platform adoption across 8 business units. His path runs through consulting and product management into hands-on data science at Humana, then platform strategy at Takeda — so he can speak fluently to both the technical build and the business case for it.",
         "In short: Jim builds and scales AI/data platforms that healthcare organizations actually use. He came up through consulting and product management, retrained into data science at Humana, and then took on platform strategy at Takeda — growing that investment from $1M to $30M+ and leading adoption across 8 business units. What drives him is turning fragmented healthcare data into decisions that actually improve patient outcomes, not just building models for their own sake."
@@ -1279,10 +1279,10 @@
     {
       id: 'takeda-migration',
       chip: 'Takeda platform migration',
-      keywords: ['takeda','pvc','e2','migration','migrate','legacy','technical debt','saas','databricks','deloitte','platform transformation'],
+      keywords: ['takeda','pvc','e2','migration','migrate','legacy','technical debt','saas','databricks','deloitte','platform transformation','foundation','governance'],
       answers: [
-        "At Takeda, Jim inherited a legacy self-managed Databricks environment (PVC) carrying heavy technical debt — Takeda was among the last clients still on that version, adding pressure to move. He led a team (including a Deloitte partner team) through the migration to a modern SaaS platform (E2), correcting root causes of the debt (tagging, security, resource management) while introducing new capabilities like SQL Warehouse. Over roughly two years, they migrated 2,000+ active users and their workflows without disrupting live support.",
-        "One of Jim's biggest platform initiatives at Takeda was leading the migration off a legacy, self-managed Databricks environment (PVC) — Takeda was one of the last clients still running it — onto the modern SaaS platform (E2). Working with a team that included a Deloitte partner group, he fixed the underlying causes of the technical debt (tagging, security, resource management) and rolled out new capabilities like SQL Warehouse along the way. The whole thing took about two years and moved 2,000+ active users without interrupting live support."
+        "The Databricks migration wasn't just a lift-and-shift — Jim treated the platform foundation itself as the deliverable, since without solid governance, metadata, permissions, and data quality, it's hard to deploy AI responsibly at scale. The challenges were real: global stakeholder buy-in, a deprecating support window on the legacy environment, budget pressure from finance, and features like Unity Catalog that were flat-out blocked on the old platform. Jim brought in a larger consulting team to give each business unit hands-on attention — hearing their concerns, building reusable templates, and pulling in extra resourcing from Databricks itself — while separately negotiating a longer support window and financial support from the vendor. The payoff: the enterprise contract grew from $1M to $17.5M to $30M+, the platform expanded globally across the US, EU, and Japan, and monthly active users grew from 900 to 2,700.",
+        "When Jim led the Databricks migration at Takeda, he treated platform foundations — governance, metadata, permissions, data quality — as the real deliverable, since none of that being in place makes it nearly impossible to deploy AI responsibly at scale. He was up against global stakeholder buy-in, a legacy support window that was expiring, finance pressure to cut costs (which SQL Warehouses helped address at roughly 60% lower cost than the old setup), and features like Unity Catalog that simply couldn't ship on the old infrastructure. His approach: scale up a consulting team to work hands-on with each business unit, negotiate an extended support window and financial backing directly with Databricks, and drive adoption of Unity Catalog, the Databricks Assistant, and Serverless SQL. The result was a multi-year contract that grew from $1M to $17.5M to $30M+, expansion into the EU and Japan, and MAU tripling from 900 to 2,700."
       ]
     },
     {
@@ -1313,18 +1313,37 @@
       ]
     },
     {
+      id: 'prioritization',
+      chip: 'How Jim prioritizes',
+      keywords: ['prioritize','prioritization','prioritizes','sequencing','sequence','roadmap decision','tradeoffs','tradeoff','backlog priority','feature priority','how do you decide','say yes','not simply saying yes'],
+      answers: [
+        "Jim's view on prioritization: product management is about sequencing, not just saying yes. After the Databricks rollout landed at Takeda, a wave of new demands surfaced at once — Unity Catalog adoption and governance, Delta Sharing, Delta Live Tables, the Databricks Assistant, and Serverless SQL. He judged Unity Catalog governance as the highest-value, highest-effort item, since it was actively blocking the enterprise from adopting new vendor features — so that went first. Serverless SQL, by contrast, was low effort but its value wasn't obvious yet, so he ran internal pilots to build the case before a broader rollout. Serverless SQL ended up adopting quickly, and the pilots even surfaced real cost savings along the way.",
+        "When a wave of new platform demands hit at once after the Databricks rollout — Unity Catalog governance, Delta Sharing, Delta Live Tables, the Databricks Assistant, and Serverless SQL — Jim didn't just work the list in order. He prioritized Unity Catalog governance first because it was the highest-effort item but also the one actively blocking the enterprise from adopting new vendor capabilities. Serverless SQL was lower effort but its ROI wasn't proven yet, so rather than guess, he ran internal pilots to justify the investment before scaling it. Those pilots paid off twice — Serverless SQL adopted quickly, and the pilots themselves uncovered meaningful cost savings."
+      ]
+    },
+    {
       id: 'transition-ds',
       chip: 'How did Jim get into data science?',
-      keywords: ['transition','career change','datarobot','background','started','how did','why data science','journey','path'],
+      keywords: ['transition','career change','datarobot','background','started','how did','why data science','journey','path','chapters','career story'],
       answers: [
         "Jim transitioned into data science after taking time off to take evening classes, including one taught by a former DataRobot VP that hooked him on the field. He built a portfolio of hands-on projects that led directly to interviews and his role at Humana — his first time sitting in a hands-on technical seat after a career in consulting and product management. He later moved on to lead AI platform strategy at Takeda.",
-        "It wasn't a straight line — Jim started in consulting and product management, then took time off to study data science in evening classes, including one taught by a former DataRobot VP that got him hooked. He turned that into a portfolio of hands-on projects, which led to interviews and his first technical seat at Humana. From there he moved into leading AI platform strategy at Takeda."
+        "It wasn't a straight line — Jim started in consulting and product management, then took time off to study data science in evening classes, including one taught by a former DataRobot VP that got him hooked. He turned that into a portfolio of hands-on projects, which led to interviews and his first technical seat at Humana. From there he moved into leading AI platform strategy at Takeda.",
+        "Jim's path to AI leadership ran through three chapters. He started in consulting on digital transformations, which pulled him deep into health tech — time on the provider side at Beth Israel, then early-stage healthtech startups doing EHR integrations and population health work, which gave him a firsthand appreciation for how fragmented healthcare data is and how hard it is to turn that into actionable decisions. That led him to formal data science training and a move to the payer side at Humana, building predictive models on claims, survey, and contact-center data — though what he found he actually enjoyed most wasn't the modeling itself, it was partnering with business stakeholders to find where analytics could move the needle on member engagement. At Takeda, his role evolved again: instead of owning a single model, he ended up owning the platform, roadmap, governance, and product strategy that let hundreds of analytics and AI use cases scale across multiple business units."
+      ]
+    },
+    {
+      id: 'weakness',
+      chip: "Jim's biggest weakness",
+      keywords: ['weakness','weaknesses','biggest weakness','area of growth','area for improvement','self improvement','saying no','worst trait','shortcoming'],
+      answers: [
+        "One area Jim has worked on is getting comfortable saying no. He genuinely enjoys partnering with stakeholders, and early on he sometimes tried to accommodate too many requests because he wanted to be responsive. Taking on larger enterprise platforms taught him that saying yes to everything usually means delivering less value overall. Today he spends much more time explaining the tradeoffs behind prioritization — a request may have to wait because of engineering capacity, platform stability, or strategic priorities — and has found stakeholders are far more accepting of a 'not now' when they understand where their request fits into the broader roadmap.",
+        "Jim's biggest growth area has been learning to say no. He likes partnering closely with stakeholders, and early in his career that sometimes meant overcommitting just to stay responsive. Leading larger enterprise platforms changed his thinking — saying yes to everything dilutes overall value — so now he leans on transparent tradeoff conversations, explaining when something has to wait for engineering capacity, platform stability, or strategic priorities. Stakeholders tend to accept a 'not now' far more readily once they see how their request fits into the bigger roadmap."
       ]
     },
     {
       id: 'conflict',
       chip: 'A time Jim handled conflict',
-      keywords: ['conflict','disagreement','difficult','tension','deadline','challenge','struggle','hard time','weakness','failure','mistake'],
+      keywords: ['conflict','disagreement','difficult','tension','deadline','challenge','struggle','hard time','failure','mistake'],
       answers: [
         "When a modeling project fell behind at Humana, Jim was pulled in to deliver within a month. He and the lead data scientist came from very different backgrounds (academia vs. industry) and initially struggled to align on data gathering. Jim built out a parallel feature set and rallied the team to create a backup modeling approach — the project shipped on time, and the team ended up with two viable models to offer stakeholders a choice.",
         "A good example: a modeling project at Humana had fallen behind, and Jim was brought in with about a month to deliver. He and the lead data scientist didn't initially see eye to eye on data gathering — different backgrounds, academia versus industry. Rather than let it stall the project, Jim built a parallel feature set and rallied the team around a backup modeling approach. It shipped on time, and stakeholders ended up with two viable models to choose from instead of none."
