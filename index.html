@@ -209,18 +209,20 @@
   .stat-card .stat-title .accent{color:var(--cyan);}
   .stat-card p{color:var(--text-dim); font-size:0.88rem;}
 
-  .quote-photo{
-    width:96px; height:96px; border-radius:16px; overflow:hidden;
-    border:2px solid var(--cyan); box-shadow:0 12px 30px rgba(0,0,0,0.5), 0 0 30px rgba(132,232,255,0.12);
-    margin-bottom:20px;
-  }
-  .quote-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .quote-block{
     background:var(--card); border:1px solid var(--border); border-radius:20px; padding:32px;
     position:relative;
   }
   .quote-block .qmark{color:var(--cyan); font-style:normal; font-weight:700;}
   .quote-block p{color:var(--text-dim); font-style:italic; font-size:1rem; margin-bottom:16px;}
+  .quote-author{display:flex; align-items:center; gap:12px; padding-top:18px; margin-top:16px; border-top:1px solid var(--border);}
+  .quote-avatar{
+    width:42px; height:42px; border-radius:50%; flex:none; overflow:hidden;
+    border:1px solid rgba(132,232,255,0.25);
+  }
+  .quote-avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+  .quote-author strong{display:block; color:var(--text); font-size:0.92rem;}
+  .quote-author span{display:block; color:var(--text-faint); font-size:0.78rem; margin-top:2px;}
   .quote-block p:last-of-type{margin-bottom:0;}
 
   @media (max-width:900px){
@@ -623,10 +625,16 @@
       </div>
 
       <div>
-        <div class="quote-photo"><img src="assets/headshot2.jpg" alt="Jim Lee"></div>
         <div class="quote-block">
           <p><span class="qmark">&ldquo;</span>I've seen healthcare across multiple points of care, from community health centers serving the homeless to Medicare patients navigating the hospital system. It's no accident I've spent over a decade building solutions in this space.</p>
           <p>The real value of healthcare AI isn't in the model — it's in improving patient outcomes by turning fragmented data into timely, actionable decisions across the care journey.<span class="qmark">&rdquo;</span></p>
+          <div class="quote-author">
+            <span class="quote-avatar"><img src="assets/headshot2.jpg" alt="Jim Lee"></span>
+            <div>
+              <strong>Jim Lee</strong>
+              <span>AI Product Strategy Leader</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1423,6 +1431,9 @@
     setTimeout(() => addMessage(findAnswer(q), 'bot'), 300);
   });
 </script>
+
+<script data-goatcounter="https://jim-portfolio.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
