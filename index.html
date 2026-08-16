@@ -506,20 +506,27 @@
   .chat-msg.bot{align-self:flex-start; background:var(--bg-alt); border:1px solid var(--border); color:var(--text-dim); border-bottom-left-radius:4px;}
   .chat-msg.bot p, .chat-msg.bot ul{margin:0;}
   .chat-msg.bot > * + *{margin-top:0.75em;}
+  .chat-msg.bot > * + .chat-heading{margin-top:1.2em;}
   .chat-msg.bot strong{color:var(--text); font-weight:700;}
   .chat-msg.bot .chat-heading{color:var(--text); font-weight:800;}
   .chat-msg.bot ul{padding-left:1.15em;}
   .chat-msg.bot li{margin:0;}
   .chat-msg.bot li + li{margin-top:0.45em;}
-  .chat-msg.user{align-self:flex-end; background:var(--cyan); color:#04121a; font-weight:600; border-bottom-right-radius:4px;}
+  .chat-msg.user{
+    align-self:flex-end; background:rgba(132,232,255,0.14); border:1px solid rgba(132,232,255,0.32);
+    color:var(--text); font-weight:600; border-bottom-right-radius:4px;
+  }
   .chat-followup{
     align-self:flex-start; max-width:86%; text-align:left;
-    background:none; border:1px dashed var(--border-strong); color:var(--cyan);
+    background:var(--bg-alt); border:1px solid var(--border); border-left:2px solid var(--cyan);
+    color:var(--text-dim);
     font-size:0.82rem; font-weight:600; font-family:var(--font-sans); line-height:1.4;
     padding:9px 14px; border-radius:14px; border-bottom-left-radius:4px;
-    cursor:pointer; transition:border-color .2s, background .2s;
+    cursor:pointer; transition:border-color .2s, color .2s, background .2s;
   }
-  .chat-followup:hover{border-color:var(--cyan); background:rgba(132,232,255,0.08);}
+  .chat-followup:hover{color:var(--cyan); background:rgba(132,232,255,0.06);}
+  .chat-followup:disabled, .chat-chip:disabled, .chat-form button:disabled{opacity:0.45; cursor:not-allowed;}
+  .chat-chips.chat-chips--hidden{display:none;}
   .chat-thinking{display:flex; align-items:center; gap:4px; padding:14px;}
   .chat-thinking span{
     width:6px; height:6px; border-radius:50%; background:var(--text-faint);
@@ -543,6 +550,7 @@
     border-radius:100px; padding:10px 16px; font-size:0.86rem; font-family:var(--font-sans);
   }
   .chat-form input:focus{outline:none; border-color:var(--cyan);}
+  .chat-form input:disabled{opacity:0.5;}
   .chat-form button{
     width:38px; height:38px; flex:none; border-radius:50%; border:none;
     background:var(--cyan); color:#04121a; font-size:1.1rem; cursor:pointer;
@@ -1558,6 +1566,7 @@
       btn.className = 'chat-chip';
       btn.textContent = entry.chip;
       btn.addEventListener('click', () => {
+        if (chatBusy) return;
         addMessage(entry.chip, 'user');
         respondTo(entry.chip);
       });
@@ -1592,6 +1601,8 @@
   const CHAT_WORKER_URL = 'https://jim-portfolio-chat.jim-portfolio-chat.workers.dev';
   const CHAT_TIMEOUT_MS = 12000;
   const chatHistory = [];
+  let pendingFollowUp = null;
+  let chatBusy = false;
 
   function addThinking() {
     const div = document.createElement('div');
@@ -1623,21 +1634,43 @@
     }
   }
 
+  function clearFollowUp() {
+    if (pendingFollowUp) {
+      pendingFollowUp.remove();
+      pendingFollowUp = null;
+    }
+  }
+
   function addFollowUp(question) {
+    clearFollowUp();
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'chat-followup';
     btn.textContent = question;
     btn.addEventListener('click', () => {
-      btn.remove();
+      if (chatBusy) return;
+      clearFollowUp();
       addMessage(question, 'user');
       respondTo(question);
     });
     chatLog.appendChild(btn);
     chatLog.scrollTop = chatLog.scrollHeight;
+    pendingFollowUp = btn;
+  }
+
+  function setChatBusy(busy) {
+    chatBusy = busy;
+    chatInput.disabled = busy;
+    chatForm.querySelector('button[type="submit"]').disabled = busy;
+    chatChips.querySelectorAll('button').forEach(b => { b.disabled = busy; });
+    if (!busy) chatInput.focus();
   }
 
   async function respondTo(question) {
+    if (chatBusy) return;
+    setChatBusy(true);
+    clearFollowUp();
+    chatChips.classList.add('chat-chips--hidden');
     const thinkingEl = addThinking();
     const result = await askWorker(question);
     thinkingEl.remove();
@@ -1646,13 +1679,15 @@
       chatHistory.push({ role: 'user', content: question }, { role: 'assistant', content: result.answer });
       if (chatHistory.length > 8) chatHistory.splice(0, chatHistory.length - 8);
       if (result.followUp) addFollowUp(result.followUp);
-      return;
+    } else {
+      addMessage(findAnswer(question), 'bot');
     }
-    addMessage(findAnswer(question), 'bot');
+    setChatBusy(false);
   }
 
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (chatBusy) return;
     const q = chatInput.value.trim();
     if (!q) return;
     addMessage(q, 'user');
