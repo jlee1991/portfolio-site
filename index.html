@@ -1559,12 +1559,7 @@
       btn.textContent = entry.chip;
       btn.addEventListener('click', () => {
         addMessage(entry.chip, 'user');
-        setTimeout(() => {
-          const a = pickAnswer(entry);
-          addMessage(a, 'bot');
-          chatHistory.push({ role: 'user', content: entry.chip }, { role: 'assistant', content: a });
-          if (chatHistory.length > 8) chatHistory.splice(0, chatHistory.length - 8);
-        }, 250);
+        respondTo(entry.chip);
       });
       chatChips.appendChild(btn);
     });
