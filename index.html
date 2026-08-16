@@ -512,6 +512,14 @@
   .chat-msg.bot li{margin:0;}
   .chat-msg.bot li + li{margin-top:0.45em;}
   .chat-msg.user{align-self:flex-end; background:var(--cyan); color:#04121a; font-weight:600; border-bottom-right-radius:4px;}
+  .chat-followup{
+    align-self:flex-start; max-width:86%; text-align:left;
+    background:none; border:1px dashed var(--border-strong); color:var(--cyan);
+    font-size:0.82rem; font-weight:600; font-family:var(--font-sans); line-height:1.4;
+    padding:9px 14px; border-radius:14px; border-bottom-left-radius:4px;
+    cursor:pointer; transition:border-color .2s, background .2s;
+  }
+  .chat-followup:hover{border-color:var(--cyan); background:rgba(132,232,255,0.08);}
   .chat-thinking{display:flex; align-items:center; gap:4px; padding:14px;}
   .chat-thinking span{
     width:6px; height:6px; border-radius:50%; background:var(--text-faint);
@@ -1612,7 +1620,7 @@
       });
       if (!res.ok) return null;
       const data = await res.json();
-      return data && data.answer ? data.answer : null;
+      return data && data.answer ? data : null;
     } catch {
       return null;
     } finally {
@@ -1620,14 +1628,29 @@
     }
   }
 
+  function addFollowUp(question) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chat-followup';
+    btn.textContent = question;
+    btn.addEventListener('click', () => {
+      btn.remove();
+      addMessage(question, 'user');
+      respondTo(question);
+    });
+    chatLog.appendChild(btn);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
   async function respondTo(question) {
     const thinkingEl = addThinking();
-    const aiAnswer = await askWorker(question);
+    const result = await askWorker(question);
     thinkingEl.remove();
-    if (aiAnswer) {
-      addMessage(aiAnswer, 'bot');
-      chatHistory.push({ role: 'user', content: question }, { role: 'assistant', content: aiAnswer });
+    if (result) {
+      addMessage(result.answer, 'bot');
+      chatHistory.push({ role: 'user', content: question }, { role: 'assistant', content: result.answer });
       if (chatHistory.length > 8) chatHistory.splice(0, chatHistory.length - 8);
+      if (result.followUp) addFollowUp(result.followUp);
       return;
     }
     addMessage(findAnswer(question), 'bot');
