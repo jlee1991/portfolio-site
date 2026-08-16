@@ -505,6 +505,17 @@
   }
   .chat-msg.bot{align-self:flex-start; background:var(--bg-alt); border:1px solid var(--border); color:var(--text-dim); border-bottom-left-radius:4px;}
   .chat-msg.user{align-self:flex-end; background:var(--cyan); color:#04121a; font-weight:600; border-bottom-right-radius:4px;}
+  .chat-thinking{display:flex; align-items:center; gap:4px; padding:14px;}
+  .chat-thinking span{
+    width:6px; height:6px; border-radius:50%; background:var(--text-faint);
+    animation:chat-bounce 1.2s infinite ease-in-out;
+  }
+  .chat-thinking span:nth-child(2){animation-delay:0.15s;}
+  .chat-thinking span:nth-child(3){animation-delay:0.3s;}
+  @keyframes chat-bounce{
+    0%, 60%, 100%{transform:translateY(0); opacity:0.5;}
+    30%{transform:translateY(-4px); opacity:1;}
+  }
   .chat-chips{display:flex; flex-wrap:wrap; gap:8px; padding:0 20px 14px;}
   .chat-chip{
     background:none; border:1px solid var(--border-strong); color:var(--text-dim);
@@ -1470,7 +1481,12 @@
       btn.textContent = entry.chip;
       btn.addEventListener('click', () => {
         addMessage(entry.chip, 'user');
-        setTimeout(() => addMessage(pickAnswer(entry), 'bot'), 250);
+        setTimeout(() => {
+          const a = pickAnswer(entry);
+          addMessage(a, 'bot');
+          chatHistory.push({ role: 'user', content: entry.chip }, { role: 'assistant', content: a });
+          if (chatHistory.length > 8) chatHistory.splice(0, chatHistory.length - 8);
+        }, 250);
       });
       chatChips.appendChild(btn);
     });
@@ -1497,13 +1513,63 @@
   });
   chatClose.addEventListener('click', closeChat);
 
+  // ---------- Live AI backend, with local KB as a fallback ----------
+  // Set after deploying the Cloudflare Worker (see /worker in this repo).
+  // Left blank, the assistant just uses the local keyword-matched KB above.
+  const CHAT_WORKER_URL = '';
+  const CHAT_TIMEOUT_MS = 12000;
+  const chatHistory = [];
+
+  function addThinking() {
+    const div = document.createElement('div');
+    div.className = 'chat-msg bot chat-thinking';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    chatLog.appendChild(div);
+    chatLog.scrollTop = chatLog.scrollHeight;
+    return div;
+  }
+
+  async function askWorker(question) {
+    if (!CHAT_WORKER_URL) return null;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), CHAT_TIMEOUT_MS);
+    try {
+      const res = await fetch(CHAT_WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question, history: chatHistory }),
+        signal: controller.signal,
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data && data.answer ? data.answer : null;
+    } catch {
+      return null;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  async function respondTo(question) {
+    const thinkingEl = addThinking();
+    const aiAnswer = await askWorker(question);
+    thinkingEl.remove();
+    if (aiAnswer) {
+      addMessage(aiAnswer, 'bot');
+      chatHistory.push({ role: 'user', content: question }, { role: 'assistant', content: aiAnswer });
+      if (chatHistory.length > 8) chatHistory.splice(0, chatHistory.length - 8);
+      return;
+    }
+    addMessage(findAnswer(question), 'bot');
+  }
+
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const q = chatInput.value.trim();
     if (!q) return;
     addMessage(q, 'user');
     chatInput.value = '';
-    setTimeout(() => addMessage(findAnswer(q), 'bot'), 300);
+    respondTo(q);
   });
 </script>
 
