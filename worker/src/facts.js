@@ -32,7 +32,7 @@ CAREER TIMELINE
 
 EDUCATION
 - B.S., Electrical Engineering, Boston University
-- Data Science Coursework, Harvard Extension School (Jan 2019 - Sep 2019)
+- Graduate Coursework, Data Science, Harvard Extension School (Jan 2019 - Sep 2019)
 - Graduate Coursework in Healthcare Entrepreneurship, Massachusetts Institute of Technology
 
 SKILLS
