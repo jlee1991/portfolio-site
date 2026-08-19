@@ -33,6 +33,7 @@ CAREER TIMELINE
 EDUCATION
 - B.S., Electrical Engineering, Boston University
 - Data Science Coursework, Harvard Extension School (Jan 2019 - Sep 2019)
+- Graduate Coursework in Healthcare Entrepreneurship, Massachusetts Institute of Technology
 
 SKILLS
 Databricks, Unity Catalog, Delta Sharing, Serverless SQL, AWS S3, Informatica BDM, Python,
@@ -126,9 +127,9 @@ he delivered on time — Insulin Savings hit 90%+ adoption and Welcome Calls dro
 retention.
 
 MENTORING & LEADERSHIP
-Jim remotely managed two graduate-student interns through the pandemic, running biweekly 1:1s
+Jim remotely managed three graduate-student interns through the pandemic, running biweekly 1:1s
 and working alongside them directly. He spearheaded documentation of the Retail team's projects
-into an internal wiki covering onboarding and offboarding. Both interns were recognized for
+into an internal wiki covering onboarding and offboarding. All three interns were recognized for
 their contributions.
 
 TESTIMONIALS
