@@ -1,3 +1,5 @@
 .DS_Store
 worker/node_modules
 worker/.wrangler
+worker-weekly-report/node_modules
+worker-weekly-report/.wrangler
