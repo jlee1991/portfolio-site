@@ -3,7 +3,17 @@ const DASHBOARD_URL = 'https://jim-portfolio.goatcounter.com';
 const TO_EMAIL = 'jim.lee.nj@gmail.com';
 const FROM_EMAIL = 'Portfolio Analytics <onboarding@resend.dev>';
 
-async function gcFetch(env, path) {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// GoatCounter's API has occasionally returned a spurious 404 on an
+// otherwise-valid, correctly-authorized request (observed in practice,
+// not documented behavior) -- likely a momentary stats-aggregation lag on
+// their end. This only runs once a week, so a transient blip shouldn't
+// sink the whole report: retry a couple of times with a short backoff
+// before giving up for real.
+async function gcFetch(env, path, attempt = 1) {
   const res = await fetch(`${GOATCOUNTER_BASE}${path}`, {
     headers: {
       Authorization: `Bearer ${env.GOATCOUNTER_API_KEY}`,
@@ -12,7 +22,11 @@ async function gcFetch(env, path) {
   });
   if (!res.ok) {
     const text = await res.text().catch(() => '');
-    throw new Error(`GoatCounter ${path} failed: ${res.status} ${text.slice(0, 200)}`);
+    if (attempt < 3) {
+      await sleep(attempt * 1000);
+      return gcFetch(env, path, attempt + 1);
+    }
+    throw new Error(`GoatCounter ${path} failed after ${attempt} attempts: ${res.status} ${text.slice(0, 200)}`);
   }
   return res.json();
 }
