@@ -3,8 +3,8 @@
 export const JIM_FACTS = `
 SUMMARY
 Jim Lee is a senior AI strategy leader focused on the healthcare ecosystem (pharma, payer,
-provider). He grew Databricks enterprise investment at Takeda from $1M to $30M+ while leading
-global AI platform adoption across 8 business units and $20B+ in impact scope. His path ran
+provider). He grew Databricks enterprise investment at Takeda from a ~$1M pilot to a $30M+
+three-year agreement while leading global AI platform adoption across 8 business units. His path ran
 through consulting and product management, into hands-on data science at Humana, then AI
 platform strategy at Takeda.
 
@@ -14,8 +14,9 @@ CAREER TIMELINE
   20+ enterprise applications, unifying demand management and establishing governance that
   resulted in zero major production incidents.
 - AI Transformation Product Owner, Databricks, Takeda (May 2022 - Jun 2025): Directed enterprise
-  data and AI platform strategy across 8 business units and 2,700+ users, leading a 20-person
-  cross-functional team and growing platform investment from $17.5M to $30M+.
+  data and AI platform strategy across 8 business units, growing monthly active users from ~900 to
+  ~2,700, leading a 20-person cross-functional team, and growing platform investment from a ~$1M
+  pilot to a $30M+ three-year agreement.
 - Data Scientist, Humana (Dec 2019 - May 2022): Built predictive models and Power BI dashboards
   to improve member experience and reduce CMS complaints, using claims and survey data across
   ~75K members to identify cost-saving intervention points.
@@ -48,21 +49,21 @@ global stakeholder buy-in, a deprecating legacy support window, finance pressure
 couldn't ship on the old infrastructure. Actions: scaled up a consulting team (including a
 Deloitte partner group) to work hands-on with each business unit, negotiated an extended support
 window and financial backing directly with Databricks, and drove adoption of Unity Catalog, the
-Databricks Assistant, and Serverless SQL. Results: multi-year contract grew from $1M to $17.5M to
-$30M+, expansion into the EU and Japan, MAU grew from 900 to 2,700, and 2,000+ active users were
-migrated without disrupting live support.
+Databricks Assistant, and Serverless SQL. Results: the investment grew from a ~$1M pilot to a
+$30M+ three-year agreement, with expansion into the EU and Japan, and monthly active users grew
+from ~900 to ~2,700 (3x).
 
 INFORMATICA BDM COST SAVE
 A vendor-proposed plan to migrate Informatica BDM (which runs many of Takeda's core workflows)
 came in over budget, over timeline, and risky for live operations. Jim partnered directly with
 the vendor and Informatica's product owner to pilot a leaner approach: cut the timeline by
-months, reduced coding effort ~40%, and saved $1.2M.
+months, reduced coding effort ~40%, and avoided ~$1.2M in migration costs through workflow redesign.
 
 BIGGEST COST SAVINGS (STORAGE CLEANUP)
 Finance flagged runaway S3 storage costs at Takeda. Jim traced the root cause to a missing
 garbage-collection cycle that had let years of log files pile up to roughly 3 petabytes. After
-coordinating with stakeholders to safely notify and clean it up, the result was over $4M in
-savings.
+coordinating with stakeholders to safely notify and clean it up, the result was $4M in annual
+cloud storage savings.
 
 WHAT JIM IS DOING NOW / WHAT HE'S LOOKING FOR
 Jim piloted and scaled Unity Catalog enterprise-wide at Takeda, alongside newer Databricks SaaS

@@ -439,13 +439,13 @@
     align-items:center; justify-items:center;
     row-gap:44px; column-gap:32px; margin-top:10px;
   }
-  .logo-strip a{display:inline-flex; align-items:center;}
+  .logo-strip a, .logo-strip .logo-nolink{display:inline-flex; align-items:center;}
   .logo-strip img{
     height:38px; width:auto; filter:grayscale(1) brightness(1.6); opacity:0.75;
     transition:opacity .2s;
   }
   .logo-strip img:hover{opacity:1;}
-  .logo-strip img[alt="Beth Israel Lahey Health"]{height:52px;}
+  .logo-strip img[alt="Beth Israel Deaconess Medical Center"]{height:52px;}
   .logo-strip img[alt="Azara Healthcare"]{height:46px;}
 
   @media (max-width:640px){
@@ -459,7 +459,7 @@
   }
   .wordmark:hover{opacity:1;}
   .wordmark--sans{font-family:Arial, Helvetica, sans-serif; font-weight:800;}
-  .wordmark--sans sup{font-size:0.55em; color:var(--text); font-weight:800; top:-0.85em;}
+  .wordmark--accent::after{content:">"; font-size:0.55em; color:var(--text); font-weight:800; vertical-align:super; margin-left:1px;}
 
   /* ---------- Contact / footer ---------- */
   #contact{text-align:center; padding:130px 0 70px;}
@@ -638,7 +638,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Senior AI strategy leader for the healthcare ecosystem</h2>
-      <p>Driving enterprise value across pharma, payer, and provider ecosystems — leading global AI platform adoption across 8 business units and $20B+ in impact scope.</p>
+      <p>Driving enterprise value across pharma, payer, and provider ecosystems — leading global AI platform adoption across 8 business units.</p>
     </div>
     <div class="about-grid">
       <div>
@@ -656,16 +656,16 @@
             <p>Used multi-source data (payer claims, patient surveys, EMRs) to simulate models that improved member retention.</p>
           </div>
           <div class="stat-card">
-            <div class="stat-title"><span class="accent">2,000+</span> Users Onboarded</div>
-            <p>Led migration from legacy infrastructure to a modern SaaS platform, enabling scalable AI/ML across 8 business units.</p>
+            <div class="stat-title"><span class="accent">3x</span> Monthly Active Users</div>
+            <p>Grew monthly active users from ~900 to ~2,700 across 8 business units.</p>
           </div>
           <div class="stat-card">
             <div class="stat-title"><span class="accent">$5M+</span> Cost Savings &amp; Avoidance</div>
-            <p>Delivered $4M cloud cost reduction and $1.2M migration cost avoidance via platform optimization and workflow redesign.</p>
+            <p>Delivered $4M in annual cloud storage savings and ~$1.2M in migration cost avoidance through workflow redesign.</p>
           </div>
           <div class="stat-card">
             <div class="stat-title"><span class="accent">$30M+</span> Platform Investment Growth</div>
-            <p>Grew enterprise Databricks investment from $1M to $17.5M to $30M+ through demonstrated value and scale.</p>
+            <p>Grew enterprise Databricks investment from a ~$1M pilot to a $30M+ three-year agreement.</p>
           </div>
         </div>
       </div>
@@ -704,7 +704,7 @@
         <div class="role">AI Transformation Product Owner, Databricks</div>
         <div class="company">Takeda</div>
         <div class="dates">May 2022 – Jun 2025</div>
-        <p>Directed enterprise data and AI platform strategy across 8 business units and 2,700+ users, leading a 20-person cross-functional team and growing platform investment from $17.5M to $30M+.</p>
+        <p>Directed enterprise data and AI platform strategy across 8 business units, growing monthly active users from ~900 to ~2,700, leading a 20-person cross-functional team, and growing platform investment from a ~$1M pilot to a $30M+ three-year agreement.</p>
       </div>
       <div class="timeline-item">
         <div class="role">Data Scientist</div>
@@ -761,8 +761,8 @@
         <span class="idx">02</span>
         <h3>Enterprise AI Platform Scale</h3>
         <ul>
-          <li>Scaled Databricks from a fragmented ~$1M annual investment into a <b>$30M+</b> enterprise AI platform</li>
-          <li>Expanded adoption across <b>8 business units</b> and <b>2,700+ users</b></li>
+          <li>Scaled Databricks from a ~$1M pilot into a <b>$30M+</b> three-year agreement</li>
+          <li>Expanded adoption across <b>8 business units</b>, growing monthly active users from <b>~900 to ~2,700</b> (3x)</li>
           <li>Enabled enterprise AI adoption through SQL Warehouses, Serverless SQL, Unity Catalog &amp; Delta Sharing</li>
           <li>Reduced friction across business units through scalable governance and compute modernization</li>
         </ul>
@@ -881,8 +881,7 @@
       </div>
       <div class="meta-row">
         <span class="pill">36 months</span>
-        <span class="pill">$3M Budget</span>
-        <span class="pill">2,000+ People</span>
+        <span class="pill">~900 → ~2,700 MAU</span>
         <span class="pill">Global (R&amp;D + Commercial)</span>
       </div>
       <div class="tech-row">
@@ -933,7 +932,7 @@
             <div class="tier-body">
               <h5>AI / Data Science Enablement</h5>
               <ul>
-                <li>2,000+ Users</li>
+                <li>~900 → ~2,700 MAU</li>
                 <li>ML Workflows (R&amp;D + Comm)</li>
                 <li>SQL Warehouse / Analytics</li>
               </ul>
@@ -1005,14 +1004,14 @@
         <div class="impact-cards">
           <div class="impact-card">
             <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 20.5a5 5 0 01-.6-9.97A6 6 0 0119.9 12h.2a4 4 0 010 8H8.5z"/><polyline points="14,11 14,19"/><polyline points="10.8,14.2 14,11 17.2,14.2"/></svg></span>
-            <div class="impact-value">$4M+</div>
+            <div class="impact-value">$4M</div>
             <div class="impact-label">Cloud Optimization — Annual Cost Savings</div>
             <p>Eliminated excess storage and optimized data lifecycle to reduce cloud spend.</p>
           </div>
           <div class="impact-card">
             <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="4"/><path d="M14 3.5v3.2M14 21.3v3.2M24.5 14h-3.2M6.7 14H3.5M21 7l-2.3 2.3M9.3 18.7L7 21M21 21l-2.3-2.3M9.3 9.3L7 7"/></svg></span>
             <div class="impact-value">$1.2M</div>
-            <div class="impact-label">Workflow Redesign — Cost Avoidance</div>
+            <div class="impact-label">Workflow Redesign — Migration Cost Avoidance</div>
             <p>Simplified legacy workflows and reduced engineering effort through modernization.</p>
           </div>
         </div>
@@ -1040,8 +1039,7 @@
       </div>
       <div class="meta-row">
         <span class="pill">24–36 months</span>
-        <span class="pill">↗ 3x Growth</span>
-        <span class="pill">2,700+ MAU</span>
+        <span class="pill">↗ 3x MAU growth (~900 → ~2,700)</span>
         <span class="pill">8 BUs (R&amp;D + Commercial)</span>
       </div>
       <div class="tech-row">
@@ -1148,10 +1146,10 @@
     <div class="logo-strip">
       <a href="https://www.humana.com" target="_blank" rel="noopener noreferrer" aria-label="Humana website"><img src="assets/logos/humana.jpg" alt="Humana"></a>
       <a href="https://www.takeda.com" target="_blank" rel="noopener noreferrer" aria-label="Takeda website"><img src="assets/logos/takeda.svg" alt="Takeda"></a>
-      <a href="https://www.accenture.com" target="_blank" rel="noopener noreferrer" aria-label="Accenture website"><span class="wordmark wordmark--sans" aria-hidden="true">accenture<sup>&gt;</sup></span></a>
-      <a href="https://www.bilh.org" target="_blank" rel="noopener noreferrer" aria-label="Beth Israel Lahey Health website"><img src="assets/logos/beth-israel-lahey.png" alt="Beth Israel Lahey Health"></a>
+      <a href="https://www.accenture.com" target="_blank" rel="noopener noreferrer" aria-label="Accenture website"><span class="wordmark wordmark--sans wordmark--accent" aria-hidden="true">accenture</span></a>
+      <a href="https://www.bidmc.org" target="_blank" rel="noopener noreferrer" aria-label="Beth Israel Deaconess Medical Center website"><img src="assets/logos/beth-israel-lahey.png" alt="Beth Israel Deaconess Medical Center"></a>
       <a href="https://www.azarahealthcare.com" target="_blank" rel="noopener noreferrer" aria-label="Azara Healthcare website"><img src="assets/logos/azara.jpg" alt="Azara Healthcare"></a>
-      <a href="https://www.cloudmed.com" target="_blank" rel="noopener noreferrer" aria-label="par8o (now Cloudmed) website"><img src="assets/logos/par8o.png" alt="par8o"></a>
+      <span class="logo-nolink"><img src="assets/logos/par8o.png" alt="par8o"></span>
     </div>
   </div>
 </section>
@@ -1313,8 +1311,8 @@
       chip: 'Tell me about Jim',
       keywords: ['yourself','about you','about jim','who are you','who is jim','what do you do','tell me about jim','tell me about yourself','summary','overview','elevator pitch','introduce','introduction','strengths','why hire','why should we hire'],
       answers: [
-        "Jim is a senior AI strategy leader focused on the healthcare ecosystem — pharma, payer, and provider. He's spent over a decade turning enterprise data platforms into real adoption and measurable impact, most recently growing Databricks investment at Takeda from $1M to $30M+ while leading global AI platform adoption across 8 business units. His path runs through consulting and product management into hands-on data science at Humana, then platform strategy at Takeda — so he can speak fluently to both the technical build and the business case for it.",
-        "In short: Jim builds and scales AI/data platforms that healthcare organizations actually use. He came up through consulting and product management, retrained into data science at Humana, and then took on platform strategy at Takeda — growing that investment from $1M to $30M+ and leading adoption across 8 business units. What drives him is turning fragmented healthcare data into decisions that actually improve patient outcomes, not just building models for their own sake."
+        "Jim is a senior AI strategy leader focused on the healthcare ecosystem — pharma, payer, and provider. He's spent over a decade turning enterprise data platforms into real adoption and measurable impact, most recently growing Databricks investment at Takeda from a ~$1M pilot to a $30M+ three-year agreement while leading global AI platform adoption across 8 business units. His path runs through consulting and product management into hands-on data science at Humana, then platform strategy at Takeda — so he can speak fluently to both the technical build and the business case for it.",
+        "In short: Jim builds and scales AI/data platforms that healthcare organizations actually use. He came up through consulting and product management, retrained into data science at Humana, and then took on platform strategy at Takeda — growing that investment from a ~$1M pilot to a $30M+ three-year agreement and leading adoption across 8 business units. What drives him is turning fragmented healthcare data into decisions that actually improve patient outcomes, not just building models for their own sake."
       ]
     },
     {
@@ -1322,8 +1320,8 @@
       chip: 'Takeda platform migration',
       keywords: ['takeda','pvc','e2','migration','migrate','legacy','technical debt','saas','databricks','deloitte','platform transformation','foundation','governance'],
       answers: [
-        "The Databricks migration wasn't just a lift-and-shift — Jim treated the platform foundation itself as the deliverable, since without solid governance, metadata, permissions, and data quality, it's hard to deploy AI responsibly at scale. The challenges were real: global stakeholder buy-in, a deprecating support window on the legacy environment, budget pressure from finance, and features like Unity Catalog that were flat-out blocked on the old platform. Jim brought in a larger consulting team to give each business unit hands-on attention — hearing their concerns, building reusable templates, and pulling in extra resourcing from Databricks itself — while separately negotiating a longer support window and financial support from the vendor. The payoff: the enterprise contract grew from $1M to $17.5M to $30M+, the platform expanded globally across the US, EU, and Japan, and monthly active users grew from 900 to 2,700.",
-        "When Jim led the Databricks migration at Takeda, he treated platform foundations — governance, metadata, permissions, data quality — as the real deliverable, since none of that being in place makes it nearly impossible to deploy AI responsibly at scale. He was up against global stakeholder buy-in, a legacy support window that was expiring, finance pressure to cut costs (which SQL Warehouses helped address at roughly 60% lower cost than the old setup), and features like Unity Catalog that simply couldn't ship on the old infrastructure. His approach: scale up a consulting team to work hands-on with each business unit, negotiate an extended support window and financial backing directly with Databricks, and drive adoption of Unity Catalog, the Databricks Assistant, and Serverless SQL. The result was a multi-year contract that grew from $1M to $17.5M to $30M+, expansion into the EU and Japan, and MAU tripling from 900 to 2,700."
+        "The Databricks migration wasn't just a lift-and-shift — Jim treated the platform foundation itself as the deliverable, since without solid governance, metadata, permissions, and data quality, it's hard to deploy AI responsibly at scale. The challenges were real: global stakeholder buy-in, a deprecating support window on the legacy environment, budget pressure from finance, and features like Unity Catalog that were flat-out blocked on the old platform. Jim brought in a larger consulting team to give each business unit hands-on attention — hearing their concerns, building reusable templates, and pulling in extra resourcing from Databricks itself — while separately negotiating a longer support window and financial support from the vendor. The payoff: the Databricks investment grew from a ~$1M pilot to a $30M+ three-year agreement, the platform expanded globally across the US, EU, and Japan, and monthly active users grew from ~900 to ~2,700 (3x).",
+        "When Jim led the Databricks migration at Takeda, he treated platform foundations — governance, metadata, permissions, data quality — as the real deliverable, since none of that being in place makes it nearly impossible to deploy AI responsibly at scale. He was up against global stakeholder buy-in, a legacy support window that was expiring, finance pressure to cut costs (which SQL Warehouses helped address at roughly 60% lower cost than the old setup), and features like Unity Catalog that simply couldn't ship on the old infrastructure. His approach: scale up a consulting team to work hands-on with each business unit, negotiate an extended support window and financial backing directly with Databricks, and drive adoption of Unity Catalog, the Databricks Assistant, and Serverless SQL. The result was an investment that grew from a ~$1M pilot to a $30M+ three-year agreement, expansion into the EU and Japan, and monthly active users tripling from ~900 to ~2,700."
       ]
     },
     {
@@ -1331,8 +1329,8 @@
       chip: 'Informatica BDM cost save',
       keywords: ['bdm','informatica','vendor','workflow','coding','budget','1.2m'],
       answers: [
-        "Informatica BDM powers many of Takeda's core workflows. A vendor-proposed migration plan blew well past budget and timeline and risked live operations. Jim worked directly with the vendor and Informatica's product owner to pilot a simpler approach — cutting the timeline by months, reducing coding effort by about 40%, and saving $1.2M.",
-        "When a vendor's proposed plan to migrate Informatica BDM (which runs many of Takeda's core workflows) came in over budget, over timeline, and risky for live operations, Jim pushed back. He partnered directly with the vendor and Informatica's product owner to pilot a leaner approach instead — it cut the timeline by months, reduced coding effort roughly 40%, and saved $1.2M."
+        "Informatica BDM powers many of Takeda's core workflows. A vendor-proposed migration plan blew well past budget and timeline and risked live operations. Jim worked directly with the vendor and Informatica's product owner to pilot a simpler approach — cutting the timeline by months, reducing coding effort by about 40%, and avoiding ~$1.2M in migration costs through workflow redesign.",
+        "When a vendor's proposed plan to migrate Informatica BDM (which runs many of Takeda's core workflows) came in over budget, over timeline, and risky for live operations, Jim pushed back. He partnered directly with the vendor and Informatica's product owner to pilot a leaner approach instead — it cut the timeline by months, reduced coding effort roughly 40%, and avoided ~$1.2M in migration costs through workflow redesign."
       ]
     },
     {
@@ -1340,8 +1338,8 @@
       chip: 'Biggest cost savings',
       keywords: ['storage','vacuum','s3','petabyte','cost','save','saving','savings','saved','money','cloud','finance','expensive','reduce','budget'],
       answers: [
-        "Finance flagged runaway S3 storage costs at Takeda. Jim traced the root cause to a missing garbage-collection cycle that let years of unmaintained log files pile up into roughly 3 petabytes of excess storage. He coordinated with stakeholders to safely notify and clean it up, delivering over $4M in savings and recognition for the team.",
-        "Jim's biggest cost-savings win came from a Finance escalation about runaway S3 storage costs at Takeda. He dug in and found the root cause: a missing garbage-collection cycle that had let years of log files quietly pile up to roughly 3 petabytes. After coordinating carefully with stakeholders to notify and safely clean it up, the result was over $4M in savings — and recognition for the team that found it."
+        "Finance flagged runaway S3 storage costs at Takeda. Jim traced the root cause to a missing garbage-collection cycle that let years of unmaintained log files pile up into roughly 3 petabytes of excess storage. He coordinated with stakeholders to safely notify and clean it up, delivering $4M in annual cloud storage savings and recognition for the team.",
+        "Jim's biggest cost-savings win came from a Finance escalation about runaway S3 storage costs at Takeda. He dug in and found the root cause: a missing garbage-collection cycle that had let years of log files quietly pile up to roughly 3 petabytes. After coordinating carefully with stakeholders to notify and safely clean it up, the result was $4M in annual cloud storage savings — and recognition for the team that found it."
       ]
     },
     {
