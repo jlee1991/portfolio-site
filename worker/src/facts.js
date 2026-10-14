@@ -17,7 +17,7 @@ CAREER TIMELINE
   data and AI platform strategy across 8 business units, growing monthly active users from ~900 to
   ~2,700, leading a 20-person cross-functional team, and growing platform investment from a ~$1M
   pilot to a $30M+ three-year agreement.
-- Data Scientist, Humana (Dec 2019 - May 2022): Built predictive models and Power BI dashboards
+- Data Scientist, Cognitive/Machine Learning, Humana (Dec 2019 - May 2022): Built predictive models and Power BI dashboards
   to improve member experience and reduce CMS complaints, using claims and survey data across
   ~75K members to identify cost-saving intervention points.
 - Product Manager, Integrations, par8o (Jan 2018 - Oct 2018): Led product development for
@@ -25,10 +25,10 @@ CAREER TIMELINE
   health systems.
 - Implementation Specialist, Azara Healthcare (Oct 2016 - Jan 2018): Implemented a population
   health analytics platform, integrating EHR data (Epic, NextGen, eCW).
-- Data Analyst, Beth Israel Deaconess Medical Center (Sep 2014 - Oct 2016): Designed a referral
+- Data Analyst, Care Coordination Strategy, Beth Israel Deaconess Medical Center (Sep 2014 - Oct 2016): Designed a referral
   tracking system and reporting tools for executive leadership (CEO, COO, CMO), improving
   patient retention and reducing out-of-network leakage.
-- Senior Analyst, Consulting, Accenture (Aug 2012 - Jul 2014): Automated deployment and release
+- Senior Analyst, Technology Consulting, Accenture (Aug 2012 - Jul 2014): Automated deployment and release
   processes for large-scale government and financial-sector systems.
 
 EDUCATION
